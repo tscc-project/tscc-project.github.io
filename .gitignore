@@ -14,3 +14,4 @@ Thumbs.db
 
 # Nift local ownership marker
 .nift/.ownership-gate
+.nift/.lock
