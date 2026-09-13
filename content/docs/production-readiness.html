@@ -18,7 +18,7 @@
       <li>Relative multi-file discovery, project output layout and cycle de-duplication.</li>
       <li>CommonJS lowering tested against observable <code>tsc</code> runtime behavior.</li>
       <li>TSX preserve mode with dedicated ambiguity and malformed-input coverage.</li>
-      <li>A 579-case independent contract currently at 555 pass, zero fail and 24 explicit semantic skips.</li>
+      <li>A current 618-case external contract at 600 pass, zero fail and 18 explicit semantic skips; the frozen preview baseline remains 579 / 555 / 0 / 24 for historical comparison.</li>
       <li>Canonical primitive, literal, union, callable, structural object, array and tuple types with bounded contextual and cross-module checking.</li>
       <li>Explicit default emit-on-error, opt-in <code>noEmitOnError</code>, file-local diagnostics and staged individual output replacement.</li>
       <li>A clean reproducible candidate build, ASan+UBSan, 400 mutations, frozen projects and a 7/7 Node/JS++ runtime intersection.</li>
@@ -39,7 +39,7 @@
     </div>
 
     <h2>What would change this assessment?</h2>
-    <p>The bounded preview now also has CP71-73 generated-project, sanitizer/RSS and strict external Valgrind evidence. Broader adoption still needs expanded real-project trials, reconciled external semantic coverage, reproducible cross-platform packaging/evidence and a substantially larger compatibility contract. Read the <a href="@pathto('docs/compiler-preview')">compiler-preview contract</a> and <a href="@pathto('docs/roadmap')">living roadmap</a>.</p>
+    <p>The bounded preview now also has CP71-73 generated-project, sanitizer/RSS and strict external Valgrind evidence. External semantic coverage has now been reconciled and the first real-package probes are retained. Broader adoption still needs CP81-85 to close the highest-frequency project blockers, plus reproducible cross-platform packaging/evidence and a substantially larger compatibility contract. Read the <a href="@pathto('docs/compiler-preview')">compiler-preview contract</a> and <a href="@pathto('docs/roadmap')">living roadmap</a>.</p>
     <h2>Compiler preview finish line</h2>
     <p>The next target is not drop-in <code>tsc</code> compatibility. TCP0 freezes the exact supported and excluded matrix plus a multi-file positive project and negative diagnostic sibling. TCP1-TCP5 then pin diagnostics, project/output behavior, semantic closure, the JS++ runtime intersection and reproducible candidate evidence. Any implementation checkpoint must close a failed acceptance item or stay outside the preview milestone.</p>
     <p><strong>TCP0 complete:</strong> the manifest pins ES2022, preserve/esnext/commonjs, JSX preserve, the currently checked primitive/callable/object/array subset, emitted-only transforms and explicit exclusions including package resolution, source maps and declaration emission. Production compilation has no Node, <code>tsc</code> or JS++ dependency.</p>

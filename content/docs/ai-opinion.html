@@ -4,7 +4,7 @@
 <div class="ey">Evaluation · candid reassessment · 14 September 2026</div>
 <h1>AI opinion: tscc is now a real compiler preview, but full TypeScript compatibility is still a long campaign.</h1>
 <p class="lead">The project has crossed the architectural middle. TSCC now has durable syntax and expression identity, lexical binding, one program graph, canonical types, generics and inference, overload resolution, class semantics, CFG-based narrowing, richer collections, bounded advanced types, selected JSX semantics, source maps, declaration output and an incremental-output foundation. CP71-73 then put those paths through fuzzing, sanitizer/RSS and strict Valgrind validation. That is unquestionably compiler architecture. It is not yet broad <code>tsc</code> compatibility.</p>
-<div class="call"><strong>Current verdict:</strong><p>CP75 is a good pause point. I would preserve it as the clean resume baseline, keep the product labelled <strong>Compiler Preview</strong>, and make the next campaign evidence-first: reconcile the external suite with what the compiler already supports, expand pinned real-project trials, build a versioned compatibility-gap inventory, then let those failures choose the next semantic slices.</p></div>
+<div class="call"><strong>Current verdict:</strong><p>CP75 remains a clean implementation baseline and <strong>Compiler Preview</strong> remains the right product label, but the evidence-first campaign has now been completed. The current suite is 600/0/18 across 618 cases, the compatibility matrix covers 33 areas, and three real package source distributions contributed nine classified probes. Those results select CP81-85 as the next implementation campaign.</p></div>
 
 <h2>Current ratings</h2>
 <p>These are directional engineering scores, not compatibility percentages.</p>
@@ -28,8 +28,8 @@
 <p>The encouraging part is that these are now mostly compatibility and ecosystem problems, not “we still need a binder/type system/CFG” problems. TSCC has crossed the architectural middle even though it has not crossed the compatibility finish line.</p>
 
 <h2>The external regression suite needs a different interpretation now</h2>
-<p>The 579-case suite remains at <strong>555 pass, 0 fail, 24 explicit semantic skips</strong> under the pinned Node 22.22.1 and TypeScript 7.0.2 environment. That is still a valuable frozen preview wall, but it has not grown in step with CP43-75. Many newer semantic features are protected by focused compiler-owned tests rather than new independent cases.</p>
-<div class="call"><strong>Important distinction:</strong><p>The suite is up to date as a regression baseline for the original preview contract, but it is not up to date as a complete map of what CP75 can now check. The next evidence campaign should fix that before anyone treats 555/0/24 as the project’s current semantic breadth.</p></div>
+<p>The original 579-case <strong>555 / 0 / 24</strong> result remains a frozen preview baseline. The refreshed external suite now has <strong>618 cases: 600 pass, 0 fail, 18 explicit semantic skips</strong>, with a separate 12/12 multi-file/project gate and retained 7/7 Node/JS++ runtime intersection.</p>
+<div class="call"><strong>Important distinction:</strong><p>The frozen 555/0/24 result is historical evidence, not the current breadth number. TRS9 adds a 33-area compatibility matrix so parse-only, emit-only, bounded semantic, externally covered and real-project-covered capabilities are not collapsed into a single pass percentage.</p></div>
 
 <h2>The memory-safety question is closed for this campaign</h2>
 <p>CP73 added a real-binary Valgrind integration workload over multi-file compilation, JSX contracts, runtime-bearing TypeScript semantics, source maps, declarations, incremental builds, diagnostics, CommonJS and repeated project lifetimes. The measured runs reported zero Valgrind errors, zero definite/indirect/possible loss, zero still-reachable bytes and no measured TSCC file-descriptor leaks. That does not prove all future compiler states safe, but it is strong retained evidence for the CP75 pause baseline.</p>
@@ -40,13 +40,13 @@
 
 <h2>What should happen next</h2>
 <ol>
-<li>Re-run and reclassify the 24 external semantic skips on CP75.</li>
+<li><strong>CP81:</strong> implement high-frequency standard-library member semantics identified by real projects.</li>
 <li>Add independent black-box cases for semantic families already implemented since the frozen preview.</li>
 <li>Build a versioned compatibility-gap matrix against the pinned TypeScript 7.0.2 oracle.</li>
-<li>Expand TCP6A beyond the three initial project shapes into a small pinned real-project corpus.</li>
+<li><strong>CP82-84:</strong> close flow/definite-assignment parity, practical tsconfig breadth and reduced parser/type-grammar blockers.</li>
 <li>Let those failures choose the next 2-3 vertical slices - likely declaration/library depth, ecosystem module/config behavior, JSX cross-file semantics, project references or semantic incremental reuse.</li>
 <li>Keep the CP71-73 hardening wall green while breadth grows.</li>
-</ol>
+<li><strong>CP85:</strong> rerun the retained real projects and choose the next blockers from measured deltas.</li></ol>
 
 <h2>What I would not do next</h2>
 <p>I would not chase a high regression pass percentage by adding isolated special cases. I would not rewrite the emitter merely to look more like a traditional compiler. I would not call incremental output retention an incremental compiler service. And I would not broaden “Compiler Preview” to “production-ready” until the independent semantic corpus and real projects catch up with the implementation.</p>

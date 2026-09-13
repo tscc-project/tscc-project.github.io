@@ -3,14 +3,14 @@
   <article>
 <div class="ey">Documentation</div>
 <h1>A fast TypeScript compiler with an explicit compatibility boundary.</h1>
-<p class="lead">tscc is an experimental TypeScript compiler written in C++17. It combines extremely low-latency transpilation with substantial language, project, CommonJS and TSX support, plus a bounded semantic checker that now spans objects, callables, arrays and tuples.</p>
+<p class="lead">tscc is an experimental TypeScript compiler written in C++17. It combines extremely low-latency transpilation with substantial language, project, CommonJS and TSX support, plus a bounded semantic checker that now spans generics, overloads, classes, control flow, richer collections, advanced types and JSX contracts.</p>
 <div class="call">
 <strong>Important:</strong> tscc is not yet a drop-in replacement for <code>tsc</code>. The docs distinguish what is implemented, what is tested, and what remains intentionally incomplete.</div>
 <div class="cards">
 <div class="card"><strong>Emit</strong><p>Broad TypeScript erasure plus runtime-bearing transforms.</p></div>
-<div class="card"><strong>Check</strong><p>Bound primitive expressions, assignments and const mutability.</p></div>
+<div class="card"><strong>Check</strong><p>Bounded multi-file checking through generics, overloads, classes, CFG narrowing, collections, advanced types and JSX contracts.</p></div>
 <div class="card"><strong>Goal</strong><p>A production-ready type-checking compiler built in measured slices.</p></div>
-<div class="card"><strong>Preview</strong><p>A qualified Linux compiler candidate at 555/0/24 with a 7/7 runtime intersection.</p></div>
+<div class="card"><strong>Evidence</strong><p>Current external gate: 600/0/18 across 618 cases, plus 12/12 multi-file/project and 7/7 JS++ interop.</p></div>
 </div>
 <h2>Compilation pipeline</h2>
 <pre>

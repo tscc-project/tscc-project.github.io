@@ -4,14 +4,14 @@
 <div class="ey">Evaluation</div>
 <h1>Battle tested: an independent compiler contract, not a self-authored happy path.</h1>
 <p class="lead">tscc is tested in layers because no single oracle is enough. Parser/unit tests isolate compiler internals; runtime differentials compare emitted behavior; project/module tests exercise graphs; and an independent compiler-agnostic regression suite arbitrates syntax against TypeScript itself.</p>
-    <div class="call"><strong>Current hardening baseline:</strong><p>CP71-73 now cover deterministic mutation fuzzing, a generated 250-file project using incremental/source-map/declaration paths, ASan/UBSan lifetime/project workloads, RSS soaks and strict real-binary Valgrind integration. CP74-75 closed the JSX correctness defects exposed during that validation. These results are retained evidence for CP75, not a promise that future compiler changes inherit safety automatically.</p></div>
+    <div class="call"><strong>Current hardening + compatibility baseline:</strong><p>CP71-73 now cover deterministic mutation fuzzing, a generated 250-file project using incremental/source-map/declaration paths, ASan/UBSan lifetime/project workloads, RSS soaks and strict real-binary Valgrind integration. CP74-75 closed the JSX correctness defects exposed during that validation. These results are retained evidence for CP75, not a promise that future compiler changes inherit safety automatically. The refreshed external suite now adds a 33-area compatibility matrix, 12/12 multi-file/project gate and nine classified real-package probes.</p></div>
 <div class="cards">
 <div class="card">
-<strong>579</strong>
+<strong>618</strong>
 <p>independent TS→JS regression cases in the current checkpoint.</p>
 </div>
 <div class="card">
-<strong>555 / 0 / 24</strong>
+<strong>600 / 0 / 18</strong>
 <p>pass / current-scope fail / semantic-only skip.</p>
 </div>
 <div class="card">

@@ -3,7 +3,8 @@
 <p class="lead">The bounded Linux candidate is a concrete preview of tscc as a compiler, not a declaration that it replaces <code>tsc</code> for arbitrary projects.</p>
     <div class="call"><strong>Historical baseline, current compiler is broader:</strong><p>TCP0-TCP5 remains the frozen 579-case preview contract. The implementation has since advanced to CP75 with generics/inference, overloads, classes, CFG narrowing, advanced types, bounded JSX semantics, source/declaration maps, incremental output and stronger hardening. Those additions do not retroactively widen this preview manifest; a new compatibility campaign must earn the next contract.</p></div>
 <div class="cards">
-<div class="card"><strong>555 / 0 / 24</strong><p>pass / fail / semantic skip across the 579-case independent compiler contract.</p></div>
+<div class="card"><strong>555 / 0 / 24</strong><p>frozen preview baseline across 579 cases.</p></div>
+<div class="card"><strong>600 / 0 / 18</strong><p>current external suite across 618 cases after TRS1-8 reconciliation.</p></div>
 <div class="card"><strong>7 / 7</strong><p>frozen module-free emitted output returns the expected result under Node and JS++.</p></div>
 <div class="card"><strong>400</strong><p>deterministic malformed-input mutations complete under the candidate gate.</p></div>
 </div>
@@ -22,5 +23,5 @@ total([10, 12], { value: 20 }); // 42</code></pre>
 <h2>Explicit exclusions</h2>
 <p>Package and <code>node_modules</code> resolution, path mappings, declaration emission, source maps, watch/incremental compilation, full standard-library processing, overload resolution, generics checking, classes, broad narrowing and complete TypeScript inference are not part of this preview.</p>
 <h2>Evidence still ahead</h2>
-<p>PC0V/CP73 external Valgrind confirmation is complete for the retained Linux validation workload. PC0P covers platform packages. TCP6A introduces classified real-project trials. Those results must be recorded before widening deployment or compatibility language.</p>
+<p>PC0V/CP73 external Valgrind confirmation is complete for the retained Linux validation workload. PC0P covers platform packages. TRS10 now retains classified real-package probes, and TRS11 used them to select CP81-85. Those results still do not widen the product beyond Compiler Preview; they determine what must be fixed next.</p>
 </article></div>
