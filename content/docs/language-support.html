@@ -4,6 +4,7 @@
 <div class="ey">Compiler</div>
 <h1>Language support</h1>
 <p class="lead">The current compiler surface is broad enough for serious experimentation, but the implementation categories matter: some syntax is erased, some produces runtime transforms, some is preserved, and semantic checking is deliberately bounded.</p>
+    <div class="call"><strong>CP75 current state:</strong><p>The 579-case 555/0/24 corpus remains the frozen preview regression wall, but the compiler has since added substantial focused semantic coverage through CP43-75. Treat the counts as a retained baseline, not as the current extent of supported checking. The next evidence campaign will add independent cases for the newer semantic families.</p></div>
 <div class="call"><strong>CP22 complete:</strong> the machine-checked matrix reconciles 529 cases at 505 pass, zero fail and 24 deliberate semantic skips, including nested structural object checking.</div>
 <div class="call"><strong>CP38 complete:</strong> bounded index and callable object signatures share canonical structural and function types. The corpus is 569 cases at 545 pass, zero fail and 24 deliberate semantic skips.</div>
 <div class="call"><strong>CP42 and TCP5 complete:</strong> bounded arrays and tuples close the current Linux preview candidate at 579 cases: 555 pass, zero fail and 24 deliberate semantic skips.</div>
@@ -25,21 +26,21 @@ class Point {
 <code>declare</code>, ambient interfaces/classes/functions, <code>declare global</code>, <code>export as namespace</code>, overload-only declarations and type-only imports/exports are erased without consuming following runtime statements.</p>
 <h2>Syntax rejection</h2>
 <p>The regression suite deliberately contains malformed generics, type operators, module clauses, TSX, declarations and annotations. <code>tsc --noCheck</code> is used as the syntax authority before a negative case is counted as a tscc bug.</p>
-<h2>The bounded semantic surface</h2>
+<h2>The current bounded semantic surface</h2>
 <p>tscc has a separate checker pass whose first primitive slice now anchors a larger vertical contract. Explicit <code>number</code>, <code>string</code>, or <code>boolean</code> facts flow through literals, bound identifiers, parentheses, unary operators, additive/multiplicative expressions and direct or compound assignment. Reassigning a bound <code>const</code> is diagnosed.</p>
 <pre><code class="language-typescript">const port: number = 8080;     // accepted
 const port: number = "8080";   // diagnostic</code></pre>
-<p>The binder owns bounded declarations and scopes. The type store carries primitive, literal, union, canonical callable, reusable object, array and tuple identities. Object annotations/literals support nested named and computed reads, required/optional structural assignment, callable members, bounded interface inheritance, index/call signatures and readonly write diagnostics. Annotated callable variables drive checked calls and contextual arrow/function parameters and results, including direct nested callbacks. Relative named imports propagate cloned callable and structural types across compilation units.</p>
-<p>Excess-property freshness, overload sets, generics, classes, symbols, mapped types, array methods, indexed writes, readonly arrays and optional/rest tuples remain outside this semantic slice.</p>
+<p>The binder and program graph now own declarations, scopes, exports/imports and selected cross-file identities. The type model covers primitive/literal/union facts, canonical callables and objects, arrays/tuples, generics and bounded inference, ordered overloads, two-sided class types, indexed/key operators and selected mapped/conditional/template/intersection utilities. CFG-owned facts support bounded truthiness/equality/discriminant/<code>typeof</code>/<code>instanceof</code>/property-presence narrowing plus assignment and definite-assignment reasoning. Relative and bounded Node-style module/declaration paths can propagate selected types across compilation units.</p>
+<p>This is still bounded rather than full TypeScript. Recursive/high-complexity inference, complete standard-library behavior, every class relation, cross-module runtime-TypeScript facts, project references, full JSX ecosystem typing, every package/configuration mode and the long tail of TypeScript diagnostics remain incomplete.</p>
 <div class="call">
 <strong>Practical consequence:</strong> outside the explicitly implemented semantic families, a program can emit successfully with tscc and still be rejected by full <code>tsc</code>. The independent suite tracks those as semantic-only skips rather than false parser failures.</div>
 </article>
 <article class="doc-section">
   <h2>Computed element access</h2>
-  <p>Exact string keys and bounded dynamic string/number reads are checked against structural properties and index signatures. Symbols and indexed writes remain outside this slice.</p>
+  <p>Exact string keys and bounded dynamic string/number reads and writes are checked against structural properties and index signatures, with numeric/symbol index domains represented in the canonical type model. Complete library/container behavior remains broader than this slice.</p>
 </article>
 <article class="doc-section">
   <h2>Arrays and tuples</h2>
-  <p>Bounded <code>T[]</code> and fixed heterogeneous tuple annotations have canonical identities, contextual literal checking, numeric reads and typed length. Readonly arrays, optional/rest tuple elements, methods and indexed writes remain planned.</p>
+  <p>Arrays and tuples have canonical identities with readonly collection identity, optional/rest tuple metadata, contextual literal checking, indexed access and write rules. Full standard-library method typing and every tuple inference rule remain incomplete.</p>
 </article>
 </div>

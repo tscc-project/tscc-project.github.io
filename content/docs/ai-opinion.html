@@ -1,58 +1,57 @@
 <div class="doc">
   @input("templates/sidebar.html")
   <article>
-<div class="ey">Evaluation · candid reassessment · 30 August 2026</div>
-<h1>AI opinion: tscc now deserves to be judged as a bounded compiler preview.</h1>
-<p class="lead">The project has moved beyond proving that native TypeScript erasure can be fast. TSCC now owns one program graph, durable syntax and expression identity, lexical binding, canonical callable and structural types, contextual checking, arrays and tuples, relative cross-module type propagation, stable diagnostics and an explicit output contract. That is real compiler architecture. It is still a long way from general <code>tsc</code> compatibility.</p>
-<div class="call"><strong>Current verdict:</strong><p>I would trial TSCC as an exceptionally low-latency compiler for a controlled project that fits its published preview matrix, while retaining full <code>tsc --noEmit</code> as the general semantic gate. I would not yet make TSCC the sole compiler for an arbitrary npm TypeScript application.</p></div>
+<div class="ey">Evaluation · candid reassessment · 14 September 2026</div>
+<h1>AI opinion: tscc is now a real compiler preview, but full TypeScript compatibility is still a long campaign.</h1>
+<p class="lead">The project has crossed the architectural middle. TSCC now has durable syntax and expression identity, lexical binding, one program graph, canonical types, generics and inference, overload resolution, class semantics, CFG-based narrowing, richer collections, bounded advanced types, selected JSX semantics, source maps, declaration output and an incremental-output foundation. CP71-73 then put those paths through fuzzing, sanitizer/RSS and strict Valgrind validation. That is unquestionably compiler architecture. It is not yet broad <code>tsc</code> compatibility.</p>
+<div class="call"><strong>Current verdict:</strong><p>CP75 is a good pause point. I would preserve it as the clean resume baseline, keep the product labelled <strong>Compiler Preview</strong>, and make the next campaign evidence-first: reconcile the external suite with what the compiler already supports, expand pinned real-project trials, build a versioned compatibility-gap inventory, then let those failures choose the next semantic slices.</p></div>
 
 <h2>Current ratings</h2>
-<p>These scores assess the current project against its stated direction, not against a marketing claim that it has already replaced TypeScript.</p>
+<p>These are directional engineering scores, not compatibility percentages.</p>
 <div class="rating"><span>Compile latency</span><div class="meter"><i style="width:99%"></i></div><strong>9.9</strong></div>
-<div class="rating"><span>Architecture</span><div class="meter"><i style="width:96%"></i></div><strong>9.6</strong></div>
-<div class="rating"><span>Regression discipline</span><div class="meter"><i style="width:96%"></i></div><strong>9.6</strong></div>
-<div class="rating"><span>Transpile breadth</span><div class="meter"><i style="width:86%"></i></div><strong>8.6</strong></div>
-<div class="rating"><span>Modules / projects</span><div class="meter"><i style="width:87%"></i></div><strong>8.7</strong></div>
-<div class="rating"><span>TSX preserve</span><div class="meter"><i style="width:84%"></i></div><strong>8.4</strong></div>
-<div class="rating"><span>Diagnostics / CLI DX</span><div class="meter"><i style="width:87%"></i></div><strong>8.7</strong></div>
-<div class="rating"><span>Semantic type checking</span><div class="meter"><i style="width:43%"></i></div><strong>4.3</strong></div>
-<div class="rating"><span>CI / release readiness</span><div class="meter"><i style="width:65%"></i></div><strong>6.5</strong></div>
-<div class="rating"><span>Drop-in tsc replacement</span><div class="meter"><i style="width:35%"></i></div><strong>3.5</strong></div>
+<div class="rating"><span>Architecture</span><div class="meter"><i style="width:98%"></i></div><strong>9.8</strong></div>
+<div class="rating"><span>Regression discipline</span><div class="meter"><i style="width:98%"></i></div><strong>9.8</strong></div>
+<div class="rating"><span>Transpile breadth</span><div class="meter"><i style="width:90%"></i></div><strong>9.0</strong></div>
+<div class="rating"><span>Modules / projects</span><div class="meter"><i style="width:92%"></i></div><strong>9.2</strong></div>
+<div class="rating"><span>TSX / JSX</span><div class="meter"><i style="width:88%"></i></div><strong>8.8</strong></div>
+<div class="rating"><span>Diagnostics / CLI DX</span><div class="meter"><i style="width:90%"></i></div><strong>9.0</strong></div>
+<div class="rating"><span>Semantic type checking</span><div class="meter"><i style="width:74%"></i></div><strong>7.4</strong></div>
+<div class="rating"><span>Hardening / release evidence</span><div class="meter"><i style="width:82%"></i></div><strong>8.2</strong></div>
+<div class="rating"><span>Drop-in tsc replacement</span><div class="meter"><i style="width:56%"></i></div><strong>5.6</strong></div>
 
-<h2>Why semantic checking rose from 1.4 to 4.3</h2>
-<p>The previous score described a primitive beginning. That description is obsolete. The checker now has canonical primitive, literal, union, callable, structural object, array and tuple identities; bounded narrowing; calls and arity; contextual arrow and function expressions; nested callbacks; methods and function-valued properties; interface merging and inheritance; index and call signatures; computed reads; readonly writes; and relative named-import propagation.</p>
-<p>Just as importantly, these features did not arrive as parser rejection tricks. Durable compilation units and one program graph retain the syntax, symbols, expression children, types and diagnostics required by the checker. Cross-module types are cloned into each importing unit rather than leaking unit-local identities across ownership boundaries.</p>
-<p>That is enough semantic substance to call TSCC a compiler preview rather than merely a transpiler with one experimental check. It is not enough to approach full TypeScript: generic instantiation and inference, overload resolution, class semantics, declaration libraries, broad control-flow joins, standard-library types, package typing and much of contextual inference remain absent.</p>
+<h2>What changed since the previous opinion</h2>
+<p>The largest shift is semantic depth. The earlier page still described generic inference, overloads, class semantics, broad control-flow analysis, standard-library types, package resolution, source maps, declaration emit and incremental work as missing. Much of that foundation now exists in bounded form. CP43-65 added canonical export/declaration facts, practical resolution and selected tsconfig mapping, hermetic libraries, generic identity/inference, overload sets, two-sided class types and relationships, durable expression ownership, CFG narrowing/assignment facts, richer collections and bounded advanced operators.</p>
+<p>CP66-70 then added same-unit JSX contracts, selected runtime-bearing TypeScript type facts, deterministic line source maps, bounded declaration/declaration-map emit and deterministic incremental build/output identity. CP71 hardened the expanded compiler with deterministic mutation and generated-project campaigns. CP73 exercised the real compiler under strict Valgrind across the newer paths. CP74-75 fixed the two JSX correctness defects found during that validation rather than leaving them as documented caveats.</p>
 
-<h2>Why the drop-in score fell from 5.6 to 3.5</h2>
-<p>The old score conflated “broadly useful emitter” with “drop-in replacement.” Evidence has made the distinction sharper. A real application depends on more than language syntax: <code>node_modules</code> and package resolution, path mappings, declaration files, standard libraries, project references, source maps, watch/incremental builds, a much wider tsconfig surface and diagnostic compatibility all matter.</p>
-<p>TSCC can be excellent within its frozen ES2022, relative-module, preserve/esnext/commonjs and JSX-preserve contract while still scoring modestly as an arbitrary <code>tsc</code> replacement. Lowering this score is not loss of confidence. It is a better definition of the question.</p>
+<h2>So how close is it to being a compiler?</h2>
+<p>It already is one. The meaningful question now is how close it is to being a <em>broadly TypeScript-compatible production compiler</em>. On that question there is still substantial work. TypeScript compatibility has a very long tail: declaration ecosystems, standard-library depth, package conditions and configuration variants, cross-module runtime-TypeScript facts, JSX ecosystem typing, project references, diagnostics, source-map precision, semantic incremental/watch services, newer language features and real-world package combinations all interact.</p>
+<p>The encouraging part is that these are now mostly compatibility and ecosystem problems, not “we still need a binder/type system/CFG” problems. TSCC has crossed the architectural middle even though it has not crossed the compatibility finish line.</p>
 
-<h2>The bounded preview is a meaningful milestone</h2>
-<p>The TCP0-TCP5 candidate passes 555 cases, fails zero current-scope cases and retains 24 intentional semantic skips across a 579-case independent corpus. A frozen module-free source also compiles through production TSCC and returns the explicit expected result 42 under Node and JS++ at 7/7.</p>
-<p>The candidate adds deterministic diagnostics and outputs, two documented emit policies, frozen positive and negative projects, ASan/UBSan, 400 deterministic malformed mutations, representative-project evidence, a loose startup guardrail and reproducible archives. These gates make “preview” an executable contract rather than a mood.</p>
-<div class="call"><strong>Important boundary:</strong><p>555/0/24 is not a TypeScript-completeness percentage. The 7/7 runtime intersection is not JS++ module support. A qualified Linux preview is not a stable cross-platform release.</p></div>
+<h2>The external regression suite needs a different interpretation now</h2>
+<p>The 579-case suite remains at <strong>555 pass, 0 fail, 24 explicit semantic skips</strong> under the pinned Node 22.22.1 and TypeScript 7.0.2 environment. That is still a valuable frozen preview wall, but it has not grown in step with CP43-75. Many newer semantic features are protected by focused compiler-owned tests rather than new independent cases.</p>
+<div class="call"><strong>Important distinction:</strong><p>The suite is up to date as a regression baseline for the original preview contract, but it is not up to date as a complete map of what CP75 can now check. The next evidence campaign should fix that before anyone treats 555/0/24 as the project’s current semantic breadth.</p></div>
 
-<h2>Architecture is now one of the strongest parts</h2>
-<p>The most encouraging design decision is not any individual feature. It is the repeated replacement of temporary parallel paths with owned compiler structure: one <code>ProgramGraph</code>, durable <code>CompilationUnit</code> state, stable syntax identity, decomposed annotation parsing, canonical types and retained statement-expression roots.</p>
-<p>The hybrid emitter is also pragmatic. Semantic structure owns meaning where TSCC checks or rewrites behavior, while validated source edits preserve unchanged JavaScript bytes. A wholesale AST-printer rewrite is not automatically more correct, and would put both compatibility and latency at risk before the semantic model is ready to justify it.</p>
+<h2>The memory-safety question is closed for this campaign</h2>
+<p>CP73 added a real-binary Valgrind integration workload over multi-file compilation, JSX contracts, runtime-bearing TypeScript semantics, source maps, declarations, incremental builds, diagnostics, CommonJS and repeated project lifetimes. The measured runs reported zero Valgrind errors, zero definite/indirect/possible loss, zero still-reachable bytes and no measured TSCC file-descriptor leaks. That does not prove all future compiler states safe, but it is strong retained evidence for the CP75 pause baseline.</p>
 
-<h2>The regression suite remains the project’s most valuable asset</h2>
-<p>The 579 cases are useful because they classify evidence, not because 579 is a large number. <code>tsc --noCheck</code> arbitrates syntax, full <code>tsc</code> distinguishes unimplemented semantics, Node checks runtime behavior, and explicit expectations prevent matching wrong outputs from counting as success. Every promoted slice carries positive behavior and negative diagnostics.</p>
-<p>The 24 skips are a strength. They stop parser breadth from masquerading as type-checker breadth and provide a visible queue of semantic contracts that have not yet been earned.</p>
-
-<h2>The red CI run exposed an orchestration defect; repair verification is pending</h2>
-<p>The failed Linux and macOS GitHub jobs stopped before compiler testing because <code>make test</code> invoked a sibling regression suite that the workflow had not checked out. Windows ran the smaller self-contained <code>test-core</code> target and passed. Commit <code>bd7313c</code> now makes the suite location explicit and checks out pinned suite revision <code>c80d065</code> for Unix jobs. The repair passes local default-layout and CI-style path validation, but it remains pending until the next pushed Actions run is green.</p>
-<p>This matters. Multi-repository tests are production dependencies of the evidence system even when they are not production dependencies of the compiler. CI must either check out the pinned sibling suite, consume a versioned suite artifact, or separate self-contained core tests from an explicitly provisioned aggregate gate. A green local workspace is not enough if a clean checkout cannot discover its required evidence.</p>
-<p>That is why CI/release readiness remains 6.5 rather than inheriting the regression-discipline score. The automation defect has a concrete pinned repair, but the score should rise only after GitHub reproduces the full Unix jobs successfully.</p>
+<h2>Why this is a good place to pause</h2>
+<p>The project is not stopped in the middle of an abstraction migration. CP72 explicitly froze the current compatibility/release decision; CP73 validated the expanded compiler; CP74 and CP75 closed the correctness bugs that validation exposed. Both the compiler and regression repositories were returned source-clean. Pausing here leaves a crisp resume point instead of a half-finished feature.</p>
+<p>When work resumes, the first job should not be “add another TypeScript feature.” It should be to reconcile evidence and choose the next campaign from measured gaps.</p>
 
 <h2>What should happen next</h2>
-<ol><li>Push <code>bd7313c</code> and confirm Linux, macOS and Windows from clean checkouts without weakening the aggregate contract.</li><li>Run PC0V external Valgrind confirmation on Nick’s Ubuntu machine and retain exact evidence.</li><li>Use TCP6A to classify pinned real small projects before choosing more language breadth.</li><li>Let those failures choose between package resolution and broader cross-module type propagation.</li><li>Keep benchmark work equivalent and reproducible as checker cost grows.</li></ol>
+<ol>
+<li>Re-run and reclassify the 24 external semantic skips on CP75.</li>
+<li>Add independent black-box cases for semantic families already implemented since the frozen preview.</li>
+<li>Build a versioned compatibility-gap matrix against the pinned TypeScript 7.0.2 oracle.</li>
+<li>Expand TCP6A beyond the three initial project shapes into a small pinned real-project corpus.</li>
+<li>Let those failures choose the next 2-3 vertical slices - likely declaration/library depth, ecosystem module/config behavior, JSX cross-file semantics, project references or semantic incremental reuse.</li>
+<li>Keep the CP71-73 hardening wall green while breadth grows.</li>
+</ol>
 
-<h2>Should it eventually be embedded in Nift?</h2>
-<p>No, not as a core responsibility. Nift’s source-language compilation boundary remains sensible. TSCC can be distributed beside Nift and documented as an external build tool without making either project architecturally dependent on the other.</p>
+<h2>What I would not do next</h2>
+<p>I would not chase a high regression pass percentage by adding isolated special cases. I would not rewrite the emitter merely to look more like a traditional compiler. I would not call incremental output retention an incremental compiler service. And I would not broaden “Compiler Preview” to “production-ready” until the independent semantic corpus and real projects catch up with the implementation.</p>
 
 <h2>Would I keep pursuing it?</h2>
-<p>Absolutely. TSCC has already shown that checkpointed AI-assisted work can grow a fast native transpiler into coherent compiler architecture without pretending the destination has arrived. The next phase should be less about accumulating checkpoints and more about clean CI, real projects, packages, external memory evidence and allowing actual adoption failures to choose the next vertical slices.</p>
-  </article>
+<p>Yes. The reason is stronger now than it was in August: TSCC has demonstrated that the checkpoint method can carry a native transpiler through genuine compiler architecture without collapsing under semantic state, cross-file ownership or memory pressure. The remaining road is long, but it is a road of compatibility closure rather than a bet that the foundations will eventually exist.</p>
+</article>
 </div>

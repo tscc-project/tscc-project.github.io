@@ -4,6 +4,7 @@
     <div class="ey">Status · evidence before labels</div>
     <h1>Is tscc production-ready?</h1>
     <p class="lead">Not yet as a general TypeScript compiler. It is now a qualified bounded Linux compiler-preview candidate with a meaningful semantic checker - still not a safe drop-in replacement for <code>tsc</code>.</p>
+    <div class="call"><strong>14 September 2026 reassessment:</strong><p>TSCC is materially closer to a real type-checking compiler than this page previously described. Generics/inference, overloads, classes, CFG narrowing, bounded advanced types, package/declaration/config foundations, JSX semantics, source maps, declaration output and incremental-output identity now exist in bounded form. The verdict remains <strong>not yet production-ready as a general TypeScript compiler</strong>; the remaining risk is compatibility breadth, ecosystem/project completeness and real-world evidence rather than absence of compiler architecture.</p></div>
 
     <div class="call">
       <strong>Candid verdict:</strong>
@@ -24,8 +25,8 @@
     </ul>
 
     <h2>Why the answer is still “not yet”</h2>
-    <p>A production TypeScript compiler needs much more than valid JavaScript output. tscc now has binder-owned identity, durable primitive/object/callable/array/tuple facts, contextual callbacks, index/call signatures and relative cross-module type propagation. It still lacks broad inference and control-flow analysis, overload resolution, generics, classes, standard-library processing and broad semantic diagnostics.</p>
-    <p>Its project layer also has intentionally narrow relative resolution: package and <code>node_modules</code> resolution, path aliases, declaration files and the wider TypeScript configuration surface remain outside the current implementation.</p>
+    <p>A production TypeScript compiler needs much more than valid JavaScript output. tscc now has binder-owned identity, durable primitive/object/callable/array/tuple facts, contextual callbacks, index/call signatures and relative cross-module type propagation. It now has bounded inference, CFG-based narrowing, overload resolution, class semantics and hermetic standard-library foundations, but those areas remain incomplete relative to TypeScript's full relations, library ecosystem and diagnostic surface.</p>
+    <p>Its project layer now includes practical relative and bounded Node-style resolution, declaration inputs and selected JSONC path/config mapping. Project references, the wider configuration surface, full package-condition behavior and broad declaration/library ecosystems remain incomplete.</p>
 
     <h2>Operational gaps under active scrutiny</h2>
     <p>Output policy is now deliberate: default mode emits successfully prepared files despite other errors, while <code>noEmitOnError</code> commits none. Files are staged before rename, but a sequence of filesystem renames is not a transactional multi-file commit. The supported TypeScript oracle range still needs durable pinning; fuzzing, larger real-world projects, memory measurements, cross-platform validation and reproducible release packaging need deeper evidence before a broad production claim.</p>
@@ -38,7 +39,7 @@
     </div>
 
     <h2>What would change this assessment?</h2>
-    <p>The bounded Linux preview candidate now has an explicit support matrix, frozen projects, candidate archives, sanitizer/mutation evidence and the first dual-runtime intersection. Broader adoption still needs external Valgrind confirmation, second-platform packages, classified real-project trials, reproducible cross-platform evidence and a larger semantic contract. Read the <a href="@pathto('docs/compiler-preview')">compiler-preview contract</a> and <a href="@pathto('docs/roadmap')">living roadmap</a>.</p>
+    <p>The bounded preview now also has CP71-73 generated-project, sanitizer/RSS and strict external Valgrind evidence. Broader adoption still needs expanded real-project trials, reconciled external semantic coverage, reproducible cross-platform packaging/evidence and a substantially larger compatibility contract. Read the <a href="@pathto('docs/compiler-preview')">compiler-preview contract</a> and <a href="@pathto('docs/roadmap')">living roadmap</a>.</p>
     <h2>Compiler preview finish line</h2>
     <p>The next target is not drop-in <code>tsc</code> compatibility. TCP0 freezes the exact supported and excluded matrix plus a multi-file positive project and negative diagnostic sibling. TCP1-TCP5 then pin diagnostics, project/output behavior, semantic closure, the JS++ runtime intersection and reproducible candidate evidence. Any implementation checkpoint must close a failed acceptance item or stay outside the preview milestone.</p>
     <p><strong>TCP0 complete:</strong> the manifest pins ES2022, preserve/esnext/commonjs, JSX preserve, the currently checked primitive/callable/object/array subset, emitted-only transforms and explicit exclusions including package resolution, source maps and declaration emission. Production compilation has no Node, <code>tsc</code> or JS++ dependency.</p>

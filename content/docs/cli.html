@@ -40,6 +40,6 @@ tscc --module commonjs src/main.ts</code>
 <h2>TCP2 preview boundary</h2>
 <p>The compiler preview target is exactly <code>es2022</code>. Supported module labels are <code>preserve</code>, <code>esnext</code> and <code>commonjs</code>; JSX is preserve-only. Project roots are sorted before compilation, repeat builds must be byte-identical, and unknown <code>compilerOptions</code> fail with <code>TSCC3001</code> instead of being ignored.</p>
 <h2>Compatibility is deliberate, not cosmetic</h2>
-<p>A familiar flag name does not imply the full <code>tsc</code> behavior behind it. Package resolution, path mappings, declaration emission, source maps, watch/incremental builds and most TypeScript options are not silently implied.</p>
+<p>A familiar flag name does not imply the full <code>tsc</code> behavior behind it. TSCC now has bounded package/Node-style resolution, selected path/config mapping, declaration and source-map emit, and an incremental-output foundation, but those names still represent only the documented TSCC subset; watch mode, semantic incremental reuse, project references and much of the wider TypeScript option surface remain incomplete.</p>
 </article>
 </div>

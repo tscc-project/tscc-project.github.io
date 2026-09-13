@@ -4,6 +4,7 @@
 <div class="ey">Process · AI-assisted compiler development</div>
 <h1>Fast iteration. Slow claims. Reproducible evidence.</h1>
 <p class="lead">AI can explore grammar, architecture and tests at exceptional speed. TSCC turns that speed into engineering by bounding every checkpoint, separating evidence categories, retaining exact repository heads and requiring clean tools to reproduce the claimed result.</p>
+    <div class="call"><strong>Post-CP75 strategy:</strong><p>The Valgrind detour is complete. The next AI-assisted campaign should begin with evidence reconciliation, not another feature checkpoint: refresh the external semantic contract, expand pinned real-project trials, build a machine-readable compatibility-gap inventory and let those results choose the next compiler slices.</p></div>
 <div class="call"><strong>The central rule:</strong><p>Use AI to increase the number and quality of hypotheses tested per checkpoint. Never use it to lower the evidence required to call the compiler correct.</p></div>
 
 <h2>One checkpoint is a claim plus an evidence graph</h2>
@@ -79,8 +80,8 @@ isolated CI checkout
 <div class="call"><strong>Rule:</strong><p>Never weaken an aggregate test merely to make isolated CI green. Provision its dependencies explicitly, pin them, and rerun from a clean environment.</p></div>
 
 <h2>Candidate evidence must be reproducible, not narrated</h2>
-<p>TCP5 qualifies the bounded Linux preview with committed-archive builds, deterministic outputs and diagnostics, frozen positive/negative projects, both emit policies, ASan/UBSan, 400 deterministic mutations, a representative project, a loose startup guardrail and reproducible candidate archives. PC0V remains external because the managed runner cannot supply the required leak instrumentation.</p>
-<p>Unavailable evidence is recorded as unavailable. A tool that cannot start is not a product pass or fail. Later Valgrind work must record exact repository heads, platform/tool versions, commands, exit codes and leak/error summaries.</p>
+<p>TCP5 qualifies the bounded Linux preview with committed-archive builds, deterministic outputs and diagnostics, frozen positive/negative projects, both emit policies, ASan/UBSan, 400 deterministic mutations, a representative project, a loose startup guardrail and reproducible candidate archives. CP73 later completed the external Valgrind campaign on the Linux validation host and retained the exact commands/results in compiler evidence.</p>
+<p>Unavailable evidence is recorded as unavailable. A tool that cannot start is not a product pass or fail. CP73 now demonstrates the required external-evidence pattern: exact repository head, platform/tool versions, commands, exit codes and leak/error summaries.</p>
 
 <h2>AI is useful in different roles</h2>
 <table class="status-table"><thead><tr><th>Role</th><th>Good use</th><th>Required control</th></tr></thead><tbody>

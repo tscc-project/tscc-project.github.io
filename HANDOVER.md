@@ -338,3 +338,14 @@ and labels its GitHub verification pending. Keep the CI/release score at 6.5
 until the pushed Linux/macOS/Windows run is green, then replace the dated incident
 state with the successful run evidence rather than deleting the reproducibility
 lesson.
+
+## CP75 compiler-state reconciliation (2026-09-14)
+
+Website source has been reconciled with the compiler pause baseline at TSCC
+`e4c45dc`. In particular, `content/docs/ai-opinion.html` no longer describes
+generics, overloads, classes, package/declaration/config foundations, source maps
+or incremental output as absent, and it records CP73 Valgrind closure plus the
+CP75 pause recommendation. Roadmap/readiness/support/memory/battle-tested and AI
+development pages carry current-status callouts. The frozen 579-case 555/0/24
+preview contract remains historical evidence, not a TypeScript completeness
+percentage.

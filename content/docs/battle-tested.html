@@ -4,6 +4,7 @@
 <div class="ey">Evaluation</div>
 <h1>Battle tested: an independent compiler contract, not a self-authored happy path.</h1>
 <p class="lead">tscc is tested in layers because no single oracle is enough. Parser/unit tests isolate compiler internals; runtime differentials compare emitted behavior; project/module tests exercise graphs; and an independent compiler-agnostic regression suite arbitrates syntax against TypeScript itself.</p>
+    <div class="call"><strong>Current hardening baseline:</strong><p>CP71-73 now cover deterministic mutation fuzzing, a generated 250-file project using incremental/source-map/declaration paths, ASan/UBSan lifetime/project workloads, RSS soaks and strict real-binary Valgrind integration. CP74-75 closed the JSX correctness defects exposed during that validation. These results are retained evidence for CP75, not a promise that future compiler changes inherit safety automatically.</p></div>
 <div class="cards">
 <div class="card">
 <strong>579</strong>
@@ -18,7 +19,7 @@
 <p>parser, runtime, project, TSX, CommonJS and independent regression layers.</p>
 </div>
 </div>
-<p>Compiler-lifetime Checkpoint 5 is complete: sanitizer lifetime pressure, repeated project/module success/failure/recovery, settled native RSS evidence and independent Valgrind confirmation are all retained. The later preview candidate adds ASan/UBSan, 400 deterministic mutations, frozen positive/negative projects, reproducible archives and a 7/7 Node/JS++ runtime intersection.</p><div class="call"><strong>Memory evidence has its own living record.</strong><p>The <a href="@pathto('docs/memory-safety')">Memory &amp; resource safety</a> page retains the completed lifetime baseline separately from syntax and semantic correctness. PC0V will independently repeat the candidate-era leak check on Nick's machine.</p></div>
+<p>Compiler-lifetime Checkpoint 5 is complete: sanitizer lifetime pressure, repeated project/module success/failure/recovery, settled native RSS evidence and independent Valgrind confirmation are all retained. The later preview candidate adds ASan/UBSan, 400 deterministic mutations, frozen positive/negative projects, reproducible archives and a 7/7 Node/JS++ runtime intersection.</p><div class="call"><strong>Memory evidence has its own living record.</strong><p>The <a href="@pathto('docs/memory-safety')">Memory &amp; resource safety</a> page retains the completed lifetime baseline separately from syntax and semantic correctness. CP73 has now independently repeated and broadened the candidate-era leak check on the Linux validation host.</p></div>
 <h2>The independent regression suite</h2>
 <p>The suite is intentionally kept compiler-agnostic. Cases describe source, expected category, emitted constraints and/or runtime output. <code>tsc --noCheck</code> establishes syntax validity; full <code>tsc</code> distinguishes semantic-checker-only failures; Node validates executable output where appropriate.</p>
 <h3>Why the semantic-only skips matter</h3>
